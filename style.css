@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300,400,500,600,700,800,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
@@ -34,6 +35,7 @@ section {
     padding: 10rem 9% 2rem;
 }
 
+/* ========== Header ========== */
 .header {
     position: fixed;
     top: 0;
@@ -78,13 +80,14 @@ section {
     display: none;
 }
 
+/* ========== Home ========== */
 .robot {
     position: relative;
     width: 200%;
     animation: floatImage 4s ease-in-out infinite;
 }
 
-@keyframes floatImages {
+@keyframes floatImage {
     0% {
         transform: translateY(0);
     }
@@ -97,7 +100,7 @@ section {
 }
 
 #home {
-    background : var(--background);
+    background: var(--background);
     background-size: cover;
     background-position: center;
 }
@@ -119,7 +122,6 @@ section {
 
 span {
     color: var(--main-color);
-    
 }
 
 .home-content h1 {
@@ -132,6 +134,7 @@ span {
     font-size: 1.6rem;
 }
 
+/* ========== Social Media ========== */
 .social-media a {
     display: inline-flex;
     justify-content: center;
@@ -153,6 +156,7 @@ span {
     box-shadow: 0 0 1rem var(--main-color);
 }
 
+/* ========== Buttons ========== */
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -172,6 +176,7 @@ span {
     border: 3px solid var(--main-color);
 }
 
+/* ========== About ========== */
 #about {
     background: var(--background);
     background-size: cover;
@@ -188,7 +193,7 @@ span {
 
 .about-img img {
     width: 35vw;
-        animation: animasi 4s ease-in-out infinite;
+    animation: animasi 4s ease-in-out infinite;
 }
 
 @keyframes animasi {
@@ -222,6 +227,7 @@ span {
     margin: 2rem 0 3rem;
 }
 
+/* ========== Study / Services ========== */
 #services {
     background: var(--background);
     background-size: cover;
@@ -270,6 +276,7 @@ span {
     margin: 1rem 0 3rem;
 }
 
+/* ========== Portfolio ========== */
 #portofolio {
     background: var(--background);
     background-size: cover;
@@ -311,7 +318,7 @@ span {
 .portofolio-box .portofolio-layer {
     position: absolute;
     bottom: 0;
-    left: 0; 
+    left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
@@ -353,10 +360,11 @@ span {
     color: var(--second-bg-color);
 }
 
+/* ========== Contact ========== */
 #contact {
     background: var(--background);
-    background-size: cover ;
-    background-position: center ;
+    background-size: cover;
+    background-position: center;
 }
 
 .contact h2 {
@@ -365,9 +373,8 @@ span {
 
 .contact form {
     max-width: 70rem;
-    margin: 1rem auto;
+    margin: 1rem auto 3rem;
     text-align: center;
-    margin-bottom: 3rem;
 }
 
 .contact form .input-box {
@@ -400,6 +407,7 @@ span {
     cursor: pointer;
 }
 
+/* ========== Footer ========== */
 .footer {
     display: flex;
     justify-content: space-between;
@@ -432,7 +440,73 @@ span {
     color: var(--second-bg-color);
 }
 
-/* BREAKSPOINT */
+/* ========== Read More Modal ========== */
+.readmore-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 1000;
+}
+
+.readmore-modal.active {
+    display: flex;
+}
+
+.readmore-content {
+    position: relative;
+    background: #000;
+    border: 1px solid var(--main-color);
+    box-shadow: 0 0 2rem var(--main-color);
+    border-radius: 1.5rem;
+    padding: 4rem 3rem;
+    width: 100%;
+    max-width: 45rem;
+    text-align: center;
+    animation: modalShow .3s ease;
+}
+
+.readmore-content i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.readmore-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.readmore-content p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: transparent;
+    color: var(--main-color);
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+@keyframes modalShow {
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ========== Breakpoints ========== */
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
@@ -505,7 +579,6 @@ span {
     }
 
     .home-img img {
-        /* harus di ganti dengan robot */
         width: 70vw;
         margin-top: 4rem;
     }
@@ -519,7 +592,7 @@ span {
         margin-top: 4rem;
     }
 
-    .secvices h2 {
+    .services h2 {
         margin-bottom: 3rem;
     }
 
@@ -546,14 +619,17 @@ span {
     .contact form .input-box input {
         width: 100%;
     }
+
+    .readmore-content {
+        padding: 4rem 2rem 3rem;
+    }
 }
 
 @media (max-width: 365px) {
     .home-img img {
-        /* Diganti dengan  robot */
         width: 90vw;
     }
-    
+
     .about-img img {
         width: 90vw;
     }
@@ -570,17 +646,20 @@ span {
     #home {
         background-position: center right;
     }
+
     #about {
         background-position: center right;
     }
+
     #services {
         background-position: 90%;
     }
+
     #portofolio {
         background-position: 90%;
     }
+
     #contact {
         background-position: center right;
     }
-
 }
